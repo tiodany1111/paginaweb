@@ -1,0 +1,819 @@
+
+/* ==========================================
+   GAMEZONE - CSS COMPLETO
+   Diseño gaming inspirado en Vice City
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050712;
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Imagen de fondo fija, centrada y visible en TODA la página */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background-image: url("./img/fondo.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Capa oscura suave para que se lea el texto */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: rgba(5, 7, 18, 0.55);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+header {
+    min-height: 75px;
+    padding: 15px 6%;
+    background: rgba(4, 5, 15, 0.85);
+    backdrop-filter: blur(6px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid #292b45;
+}
+
+.logo,
+.footer-logo {
+    font-size: 24px;
+    font-weight: 900;
+    color: white;
+    white-space: nowrap;
+}
+
+.logo span,
+.footer-logo span {
+    color: #ff00b7;
+    text-shadow: 0 0 12px #ff00b7;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff00b7;
+}
+
+.carrito {
+    font-size: 21px;
+    white-space: nowrap;
+}
+
+#contador {
+    display: inline-block;
+    background: #ff009d;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+/* ==========================================
+   PORTADA PRINCIPAL - FONDO CENTRADO
+========================================== */
+
+.hero {
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(90deg, rgba(3, 5, 16, 0.55) 0%, rgba(3, 5, 16, 0.25) 45%, rgba(3, 5, 16, 0) 100%);
+}
+
+.hero-contenido {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+.mini-titulo {
+    color: #ff37ca;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(65px, 9vw, 105px);
+    line-height: 0.95;
+    font-weight: 900;
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #ff009d;
+    text-shadow:
+        0 0 10px rgba(255, 0, 157, 0.9),
+        0 0 35px rgba(255, 0, 157, 0.5);
+}
+
+.hero h2 {
+    margin-top: 25px;
+    font-size: clamp(22px, 3vw, 32px);
+    color: #ff8cde;
+    letter-spacing: 2px;
+}
+
+.hero-contenido > p:not(.mini-titulo) {
+    margin-top: 20px;
+    color: #e1ddea;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 570px;
+}
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+.botones {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.btn,
+button {
+    display: inline-block;
+    padding: 14px 24px;
+
+    background: #ff009d;
+    color: white;
+
+    border: 1px solid #ff009d;
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover,
+button:hover {
+    background: #ff43bf;
+    border-color: #ff43bf;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255, 0, 157, 0.35);
+}
+
+.secundario {
+    background: rgba(10, 10, 25, 0.5);
+    border-color: #ff7ada;
+}
+
+.secundario:hover {
+    background: #a90078;
+}
+
+/* ==========================================
+   SECCIONES
+========================================== */
+
+.seccion {
+    padding: 85px 7%;
+    text-align: center;
+    background: rgba(7, 9, 22, 0.55);
+}
+
+.oscura {
+    background: rgba(11, 13, 28, 0.7);
+}
+
+.titulo-pequeno {
+    color: #ff00b7;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.titulo {
+    margin: 15px 0 45px;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+}
+
+.titulo::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    margin: 18px auto 0;
+
+    background: linear-gradient(
+        to right,
+        #ff009d,
+        #8a42ff
+    );
+
+    border-radius: 5px;
+}
+
+/* ==========================================
+   BENEFICIOS
+========================================== */
+
+.beneficios {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.beneficios > div {
+    width: 230px;
+    padding: 28px 20px;
+
+    background: #101326;
+    border: 1px solid #252944;
+    border-bottom: 3px solid #ff009d;
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.beneficios > div:hover {
+    transform: translateY(-6px);
+    border-color: #ff37ca;
+}
+
+.icono {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.beneficios h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.beneficios p {
+    color: #a8abc2;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* ==========================================
+   CONSOLAS
+========================================== */
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.producto {
+    min-width: 0;
+    overflow: hidden;
+
+    background: #101326;
+    border: 1px solid #292c49;
+    border-radius: 10px;
+
+    text-align: left;
+    transition: 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-7px);
+    border-color: #ff00b7;
+    box-shadow: 0 10px 30px rgba(255, 0, 157, 0.13);
+}
+
+.producto-img {
+    height: 210px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 90px;
+
+    background: radial-gradient(
+        circle,
+        #292d4d,
+        #10111d 75%
+    );
+
+    border-bottom: 1px solid #292c49;
+}
+
+.ps5 {
+    background: radial-gradient(circle, #263a63, #10111d 75%);
+}
+
+.xbox {
+    background: radial-gradient(circle, #21442b, #10111d 75%);
+}
+
+.nintendo {
+    background: radial-gradient(circle, #63273c, #10111d 75%);
+}
+
+.ps4 {
+    background: radial-gradient(circle, #393957, #10111d 75%);
+}
+
+.producto-info {
+    padding: 22px;
+}
+
+.marca {
+    color: #ff45c9;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.producto h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.producto-info > p:not(.marca) {
+    min-height: 40px;
+    color: #a8abc2;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.producto strong {
+    display: block;
+    margin: 18px 0;
+    color: #ff35c5;
+    font-size: 21px;
+}
+
+.producto button {
+    width: 100%;
+    padding: 12px 8px;
+    font-size: 11px;
+}
+
+/* ==========================================
+   SECCIÓN GTA VI - FONDO CENTRADO
+========================================== */
+
+.gta {
+    min-height: 480px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 7%;
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background: rgba(8, 5, 20, 0.25);
+
+    border-top: 1px solid #ff00b7;
+    border-bottom: 1px solid #ff00b7;
+}
+
+.gta-contenido {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.gta-contenido > p:first-child {
+    color: #ff5bd3;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.gta h2 {
+    margin: 22px 0;
+    font-size: clamp(40px, 7vw, 75px);
+    line-height: 1;
+    font-weight: 900;
+    text-shadow: 0 4px 15px #000;
+}
+
+.gta h2 span {
+    display: block;
+    color: #ff00b7;
+    text-shadow: 0 0 25px rgba(255, 0, 183, 0.7);
+}
+
+.gta h3 {
+    color: #ffc5ef;
+    font-size: clamp(20px, 3vw, 30px);
+    margin-bottom: 20px;
+}
+
+.gta-contenido > p:not(:first-child) {
+    color: #e1ddea;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+/* ==========================================
+   VIDEOJUEGOS
+========================================== */
+
+.juegos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.juego {
+    overflow: hidden;
+    padding-bottom: 22px;
+
+    background: #101326;
+    border: 1px solid #292c49;
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.juego:hover {
+    transform: translateY(-6px);
+    border-color: #ff00b7;
+}
+
+.portada {
+    height: 250px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.1;
+
+    text-shadow: 0 3px 10px #000;
+}
+
+.gta-portada {
+    color: white;
+    background: linear-gradient(
+        145deg,
+        #fa4caa,
+        #a33cce,
+        #ffae82
+    );
+}
+
+.gta-portada span {
+    font-size: 75px;
+    color: #ffebf8;
+}
+
+.cod-portada {
+    background: linear-gradient(
+        145deg,
+        #151515,
+        #555,
+        #141414
+    );
+}
+
+.red-portada {
+    background: linear-gradient(
+        145deg,
+        #571313,
+        #c88b43,
+        #210909
+    );
+}
+
+.fifa-portada {
+    background: linear-gradient(
+        145deg,
+        #063c6c,
+        #29a9dd,
+        #11152b
+    );
+}
+
+.juego h3 {
+    min-height: 42px;
+    margin: 18px 12px 12px;
+    font-size: 15px;
+}
+
+.juego strong {
+    display: block;
+    margin-bottom: 16px;
+    color: #ff35c5;
+    font-size: 19px;
+}
+
+.juego button {
+    margin: 0 12px;
+    padding: 11px 18px;
+}
+
+/* ==========================================
+   ACCESORIOS
+========================================== */
+
+.accesorios {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.accesorio {
+    padding: 35px 18px;
+
+    background: #101326;
+    border: 1px solid #292c49;
+    border-radius: 8px;
+
+    font-size: 48px;
+    transition: 0.3s;
+}
+
+.accesorio:hover {
+    transform: translateY(-5px);
+    border-color: #ff00b7;
+}
+
+.accesorio h3 {
+    margin: 20px 0 12px;
+    font-size: 16px;
+}
+
+.accesorio p {
+    color: #ff35c5;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+/* ==========================================
+   CONTACTO
+========================================== */
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 16px;
+
+    background: #0b0d1c;
+    color: white;
+
+    border: 1px solid #30334e;
+    border-radius: 5px;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #ff00b7;
+    box-shadow: 0 0 10px rgba(255, 0, 183, 0.12);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #8589a5;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+form button {
+    width: 100%;
+}
+
+/* ==========================================
+   PIE DE PÁGINA
+========================================== */
+
+footer {
+    padding: 45px 20px;
+    text-align: center;
+
+    background: rgba(3, 4, 11, 0.85);
+    border-top: 1px solid #292b45;
+}
+
+.footer-logo {
+    margin-bottom: 15px;
+}
+
+footer p {
+    margin: 12px;
+    color: #9295ad;
+    font-size: 13px;
+}
+
+.redes {
+    margin: 22px 0;
+    color: #ff00b7;
+    font-size: 25px;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #666a83;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1050px) {
+    header {
+        padding: 18px 4%;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .productos,
+    .juegos,
+    .accesorios {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+}
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 700px) {
+    header {
+        position: relative;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 570px;
+        padding: 55px 22px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 62px;
+        letter-spacing: -3px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero-contenido > p:not(.mini-titulo) {
+        font-size: 15px;
+    }
+
+    .botones {
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 13px 17px;
+        font-size: 11px;
+    }
+
+    .seccion {
+        padding: 65px 20px;
+    }
+
+    .titulo {
+        font-size: 30px;
+        margin-bottom: 35px;
+    }
+
+    .productos,
+    .juegos,
+    .accesorios {
+        grid-template-columns: 1fr;
+    }
+
+    .producto-img {
+        height: 230px;
+    }
+
+    .gta {
+        min-height: 400px;
+        padding: 45px 20px;
+    }
+
+    .gta h2 {
+        font-size: 43px;
+    }
+
+    .gta h3 {
+        font-size: 20px;
+    }
+
+    .portada {
+        height: 280px;
+    }
+
+    .beneficios > div {
+        width: 100%;
+        max-width: 350px;
+    }
+}
